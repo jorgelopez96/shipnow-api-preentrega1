@@ -18,7 +18,9 @@ export const productsService = {
 
   async getById(id) {
     const product = await productsRepository.findById(id);
-    if (!product) throw new AppError('Producto no encontrado', 404);
+    if (!product || product.status !== PRODUCT_STATUS.AVAILABLE) {
+      throw new AppError('Producto no encontrado o sin stock', 404);
+    }
     return product;
   },
 

@@ -39,7 +39,7 @@ Ningún otro archivo lee `process.env`: todo el proyecto usa el objeto `config`.
 | Método | Ruta                 | Descripción                                   |
 | ------ | -------------------- | --------------------------------------------- |
 | GET    | `/api/products`      | Lista los productos con stock                 |
-| GET    | `/api/products/:id`  | Obtiene un producto                           |
+| GET    | `/api/products/:id`  | Obtiene un producto (404 si no tiene stock)   |
 | POST   | `/api/products`      | Crea un producto                              |
 | PUT    | `/api/products/:id`  | Actualiza un producto                         |
 | DELETE | `/api/products/:id`  | Elimina un producto                           |
